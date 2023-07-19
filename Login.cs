@@ -1,8 +1,8 @@
-﻿using AuthenticationAPI.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Data;
 using System.Text;
-using UserManager.Helpers;
+using RequestMaker.UserRequests;
+using RequestMaker.AppSettings;
 
 namespace UserManager
 {
@@ -31,9 +31,9 @@ namespace UserManager
             {
 
 
-                HttpClient client = new HttpClient();
+                var client = new HttpClient();
                 // Set the request URI
-                var requestUri = AppSettings.BaseUrl + "/login";
+                var requestUri = AppSettingsBase.BaseUrl + "/login";
 
                 // Create the JSON content
                 var jsonContent = JsonConvert.SerializeObject(logingRequest);

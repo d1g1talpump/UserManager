@@ -1,5 +1,4 @@
-using System.Configuration;
-using UserManager.Helpers;
+using RequestMaker.AppSettings;
 
 namespace UserManager
 {
@@ -11,7 +10,9 @@ namespace UserManager
         [STAThread]
         static void Main()
         {
-            AppSettings.BaseUrl = Environment.GetEnvironmentVariable("BASEURL_AUTHENTICATIONAPI")
+
+            AppSettingsBase.AppType = "Desktop";
+            AppSettingsBase.BaseUrl = Environment.GetEnvironmentVariable("BASEURL_AUTHENTICATIONAPI")
                 ?? throw new Exception("Could not initialise Base URL");
 
             // To customize application configuration such as set high DPI settings or default font,

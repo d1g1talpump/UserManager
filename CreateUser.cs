@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using RequestMaker.UserRequests;
+using RequestMaker.AppSettings;
 using System.Data;
 using System.Text;
-using UserManager.Helpers;
 using Timer = System.Windows.Forms.Timer;
 
 namespace UserManager
@@ -39,9 +39,9 @@ namespace UserManager
             if (nullOrEmptyProperties.Count == 0)
             {
 
-                HttpClient client = new HttpClient();
+                var client = new HttpClient();
                 // Set the request URI
-                var requestUri = AppSettings.BaseUrl + "/users";
+                var requestUri = AppSettingsBase.BaseUrl + "/users";
 
                 // Create the JSON content
                 var jsonContent = JsonConvert.SerializeObject(createRequest);
@@ -53,7 +53,6 @@ namespace UserManager
 
                 // Get the response content
                 var responseJson = await response.Content.ReadAsStringAsync() ?? "";
-                ApiResponse apiResponse = JsonConvert.DeserializeObject<ApiResponse>(responseJson) ?? new ApiResponse();
 
                 // TODO: Handle the response content
                 l_createResponseMsg.Text = responseJson;
@@ -79,7 +78,7 @@ namespace UserManager
 
         }
 
-        private void TimedMessage(Label lable)
+        private static void TimedMessage(Label lable)
         {
             lable.Visible = true;
             // Create a timer with an interval of 5 seconds (5000 milliseconds)
