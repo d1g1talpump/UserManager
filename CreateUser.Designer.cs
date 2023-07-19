@@ -1,6 +1,6 @@
 ﻿namespace UserManager
 {
-    partial class Form1
+    partial class CreateUser
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,11 @@
         {
             tb_Title = new TextBox();
             tb_FirstName = new TextBox();
-            tb_ = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            tb_LastName = new TextBox();
+            tb_Role = new TextBox();
+            tb_Email = new TextBox();
+            tb_Password = new TextBox();
+            tb_ConfirmPassword = new TextBox();
             Title = new Label();
             FirstName = new Label();
             LastName = new Label();
@@ -43,61 +43,65 @@
             Password = new Label();
             ConfirmPassword = new Label();
             Submit = new Button();
+            l_emptyWarning = new Label();
+            l_createResponseMsg = new Label();
+            tb_Login = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // tb_Title
             // 
-            tb_Title.Location = new Point(363, 82);
+            tb_Title.Location = new Point(363, 87);
             tb_Title.Name = "tb_Title";
             tb_Title.Size = new Size(296, 23);
             tb_Title.TabIndex = 0;
             // 
             // tb_FirstName
             // 
-            tb_FirstName.Location = new Point(363, 111);
+            tb_FirstName.Location = new Point(363, 145);
             tb_FirstName.Name = "tb_FirstName";
             tb_FirstName.Size = new Size(296, 23);
-            tb_FirstName.TabIndex = 1;
+            tb_FirstName.TabIndex = 2;
             // 
-            // tb_
+            // tb_LastName
             // 
-            tb_.Location = new Point(363, 140);
-            tb_.Name = "tb_";
-            tb_.Size = new Size(296, 23);
-            tb_.TabIndex = 2;
+            tb_LastName.Location = new Point(363, 174);
+            tb_LastName.Name = "tb_LastName";
+            tb_LastName.Size = new Size(296, 23);
+            tb_LastName.TabIndex = 3;
             // 
-            // textBox4
+            // tb_Role
             // 
-            textBox4.Location = new Point(363, 169);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(296, 23);
-            textBox4.TabIndex = 3;
+            tb_Role.Location = new Point(363, 203);
+            tb_Role.Name = "tb_Role";
+            tb_Role.Size = new Size(296, 23);
+            tb_Role.TabIndex = 4;
             // 
-            // textBox5
+            // tb_Email
             // 
-            textBox5.Location = new Point(363, 198);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(296, 23);
-            textBox5.TabIndex = 4;
+            tb_Email.Location = new Point(363, 232);
+            tb_Email.Name = "tb_Email";
+            tb_Email.Size = new Size(296, 23);
+            tb_Email.TabIndex = 5;
             // 
-            // textBox6
+            // tb_Password
             // 
-            textBox6.Location = new Point(363, 227);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(296, 23);
-            textBox6.TabIndex = 5;
+            tb_Password.Location = new Point(363, 261);
+            tb_Password.Name = "tb_Password";
+            tb_Password.Size = new Size(296, 23);
+            tb_Password.TabIndex = 6;
             // 
-            // textBox7
+            // tb_ConfirmPassword
             // 
-            textBox7.Location = new Point(363, 256);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(296, 23);
-            textBox7.TabIndex = 6;
+            tb_ConfirmPassword.Location = new Point(363, 290);
+            tb_ConfirmPassword.Name = "tb_ConfirmPassword";
+            tb_ConfirmPassword.Size = new Size(296, 23);
+            tb_ConfirmPassword.TabIndex = 7;
             // 
             // Title
             // 
             Title.AutoSize = true;
-            Title.Location = new Point(328, 90);
+            Title.Location = new Point(328, 95);
             Title.Name = "Title";
             Title.Size = new Size(29, 15);
             Title.TabIndex = 7;
@@ -106,7 +110,7 @@
             // FirstName
             // 
             FirstName.AutoSize = true;
-            FirstName.Location = new Point(296, 119);
+            FirstName.Location = new Point(296, 153);
             FirstName.Name = "FirstName";
             FirstName.Size = new Size(61, 15);
             FirstName.TabIndex = 8;
@@ -115,7 +119,7 @@
             // LastName
             // 
             LastName.AutoSize = true;
-            LastName.Location = new Point(297, 148);
+            LastName.Location = new Point(297, 182);
             LastName.Name = "LastName";
             LastName.Size = new Size(60, 15);
             LastName.TabIndex = 9;
@@ -124,7 +128,7 @@
             // Role
             // 
             Role.AutoSize = true;
-            Role.Location = new Point(327, 177);
+            Role.Location = new Point(327, 211);
             Role.Name = "Role";
             Role.Size = new Size(30, 15);
             Role.TabIndex = 10;
@@ -133,7 +137,7 @@
             // Email
             // 
             Email.AutoSize = true;
-            Email.Location = new Point(321, 206);
+            Email.Location = new Point(321, 240);
             Email.Name = "Email";
             Email.Size = new Size(36, 15);
             Email.TabIndex = 11;
@@ -142,7 +146,7 @@
             // Password
             // 
             Password.AutoSize = true;
-            Password.Location = new Point(300, 235);
+            Password.Location = new Point(300, 269);
             Password.Name = "Password";
             Password.Size = new Size(57, 15);
             Password.TabIndex = 12;
@@ -151,7 +155,7 @@
             // ConfirmPassword
             // 
             ConfirmPassword.AutoSize = true;
-            ConfirmPassword.Location = new Point(256, 264);
+            ConfirmPassword.Location = new Point(256, 298);
             ConfirmPassword.Name = "ConfirmPassword";
             ConfirmPassword.Size = new Size(101, 15);
             ConfirmPassword.TabIndex = 13;
@@ -159,18 +163,59 @@
             // 
             // Submit
             // 
-            Submit.Location = new Point(328, 309);
+            Submit.Location = new Point(328, 343);
             Submit.Name = "Submit";
             Submit.Size = new Size(149, 26);
-            Submit.TabIndex = 14;
+            Submit.TabIndex = 8;
             Submit.Text = "Submit";
             Submit.UseVisualStyleBackColor = true;
+            Submit.Click += Submit_Click;
             // 
-            // Form1
+            // l_emptyWarning
+            // 
+            l_emptyWarning.AutoSize = true;
+            l_emptyWarning.ForeColor = Color.IndianRed;
+            l_emptyWarning.Location = new Point(328, 372);
+            l_emptyWarning.Name = "l_emptyWarning";
+            l_emptyWarning.Size = new Size(0, 15);
+            l_emptyWarning.TabIndex = 15;
+            l_emptyWarning.UseMnemonic = false;
+            l_emptyWarning.Visible = false;
+            // 
+            // l_createResponseMsg
+            // 
+            l_createResponseMsg.AutoSize = true;
+            l_createResponseMsg.Location = new Point(365, 62);
+            l_createResponseMsg.Name = "l_createResponseMsg";
+            l_createResponseMsg.Size = new Size(0, 15);
+            l_createResponseMsg.TabIndex = 16;
+            l_createResponseMsg.Visible = false;
+            // 
+            // tb_Login
+            // 
+            tb_Login.AutoSize = true;
+            tb_Login.Location = new Point(320, 124);
+            tb_Login.Name = "tb_Login";
+            tb_Login.Size = new Size(37, 15);
+            tb_Login.TabIndex = 18;
+            tb_Login.Text = "Login";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(363, 116);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(296, 23);
+            textBox1.TabIndex = 1;
+            // 
+            // CreateUser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tb_Login);
+            Controls.Add(textBox1);
+            Controls.Add(l_createResponseMsg);
+            Controls.Add(l_emptyWarning);
             Controls.Add(Submit);
             Controls.Add(ConfirmPassword);
             Controls.Add(Password);
@@ -179,15 +224,15 @@
             Controls.Add(LastName);
             Controls.Add(FirstName);
             Controls.Add(Title);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(tb_);
+            Controls.Add(tb_ConfirmPassword);
+            Controls.Add(tb_Password);
+            Controls.Add(tb_Email);
+            Controls.Add(tb_Role);
+            Controls.Add(tb_LastName);
             Controls.Add(tb_FirstName);
             Controls.Add(tb_Title);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "CreateUser";
+            Text = "CreateUser";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -196,11 +241,11 @@
 
         private TextBox tb_Title;
         private TextBox tb_FirstName;
-        private TextBox tb_;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox tb_LastName;
+        private TextBox tb_Role;
+        private TextBox tb_Email;
+        private TextBox tb_Password;
+        private TextBox tb_ConfirmPassword;
         private Label Title;
         private Label FirstName;
         private Label LastName;
@@ -209,5 +254,9 @@
         private Label Password;
         private Label ConfirmPassword;
         private Button Submit;
+        private Label l_emptyWarning;
+        private Label l_createResponseMsg;
+        private Label tb_Login;
+        private TextBox textBox1;
     }
 }
